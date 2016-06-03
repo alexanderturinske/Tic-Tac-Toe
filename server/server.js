@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
 
 var app = express();
 
@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 app.listen(port, function() {
   if (err) {
-    console.log('Server not started!')
+    console.log('Server not started!');
   }
   console.log('The server has started on port ' + port);
 })
