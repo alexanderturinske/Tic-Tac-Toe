@@ -2,8 +2,10 @@ html, body, #app {
   height: 100%;
 }
 
+
 #board {
-  height: 50%;
+  height: 500px;
+  margin: auto auto;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -14,4 +16,6 @@ html, body, #app {
 #square {
   flex-grow: 0;
   height: 30%;
+  width: 30%;
+  display: inline-block;
 }
