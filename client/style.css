@@ -1,0 +1,17 @@
+html, body, #app {
+  height: 100%;
+}
+
+#board {
+  height: 50%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+#square {
+  flex-grow: 0;
+  height: 30%;
+}
