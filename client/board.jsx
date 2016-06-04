@@ -12,7 +12,11 @@ class Board extends Component {
     return (
       <div id='board'>
         {this.props.grid.map((square, i) =>
-          <Square key={i} number={i} />
+          <Square
+            key={i}
+            number={i}
+            clickEvent={this.props.clickEvent}
+          />
         )}
       </div>
     );
@@ -21,6 +25,7 @@ class Board extends Component {
 
 Board.propTypes = {
   grid: React.PropTypes.array,
+  clickEvent: React.PropTypes.func,
 };
 
 export default Board;

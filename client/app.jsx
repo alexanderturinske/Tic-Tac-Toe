@@ -12,7 +12,7 @@ class App extends Component {
 
   handleTurn(number) {
     this.setState({
-      grid: grid.map((e, i) => {
+      grid: this.state.grid.map((e, i) => {
         if (i === number) {
           return 'X';
         } else {
@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Board grid={this.state.grid} />
+        <Board grid={this.state.grid} clickEvent={this.handleTurn.bind(this)} />
       </div>
     );
   }
