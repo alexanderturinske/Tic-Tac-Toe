@@ -12,7 +12,7 @@ class Board extends Component {
     return (
       <div id='board'>
         {this.props.grid.map((square, i) =>
-          <Square key={i} />
+          <Square key={i} number={i} />
         )}
       </div>
     );

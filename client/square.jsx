@@ -9,7 +9,7 @@ class Square extends Component {
   render() {
     return (
       <div id="square">
-        "yiss"
+        {this.props.number}
       </div>
     );
   }
