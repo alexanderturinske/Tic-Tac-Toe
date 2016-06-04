@@ -1,27 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Square from './square.jsx';
 
-class Board extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-
-  render() {
-    return (
-      <div id='board'>
-        {this.props.grid.map((square, i) =>
-          <Square
-            key={i}
-            number={i}
-            clickEvent={this.props.clickEvent}
-          />
-        )}
-      </div>
-    );
-  }
-}
+const Board = ({ grid, clickEvent }) => (
+  <div id='board'>
+    {grid.map((square, i) =>
+      <Square
+        key={i}
+        number={i}
+        clickEvent={clickEvent}
+      />
+    )}
+  </div>
+);
 
 Board.propTypes = {
   grid: React.PropTypes.array,
