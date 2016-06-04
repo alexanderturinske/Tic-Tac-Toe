@@ -1,22 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Square extends Component {
+const Square = ({ number, clickEvent }) => (
+  <div
+    id="square"
+    onClick={() => clickEvent(number)}
+  >
+    {number}
+  </div>
+);
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div
-        id="square"
-        onClick={() => this.props.clickEvent(this.props.number)}
-      >
-        {this.props.number}
-      </div>
-    );
-  }
-}
 
 Square.propTypes = {
   clickEvent: React.PropTypes.func,
