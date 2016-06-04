@@ -20,7 +20,24 @@ class App extends Component {
         }
       }),
     });
-    if (this.state.grid[0] === 'X' && this.state.grid[1] === 'X' && this.state.grid[2] === 'X') {
+    // vertical check
+    if (this.state.grid[0] === 'X' && this.state.grid[1] === 'X' && this.state.grid[2] === 'X' ||
+      this.state.grid[4] === 'X' && this.state.grid[5] === 'X' && this.state.grid[6] === 'X' ||
+      this.state.grid[7] === 'X' && this.state.grid[8] === 'X' && this.state.grid[9] === 'X'
+    ) {
+      alert('You have won!');
+    }
+    // horizontal check
+    if (this.state.grid[0] === 'X' && this.state.grid[3] === 'X' && this.state.grid[7] === 'X' ||
+      this.state.grid[1] === 'X' && this.state.grid[4] === 'X' && this.state.grid[8] === 'X' ||
+      this.state.grid[2] === 'X' && this.state.grid[5] === 'X' && this.state.grid[9] === 'X'
+    ) {
+      alert('You have won!');
+    }
+    // cross check
+    if (this.state.grid[0] === 'X' && this.state.grid[4] === 'X' && this.state.grid[9] === 'X' ||
+      this.state.grid[2] === 'X' && this.state.grid[4] === 'X' && this.state.grid[7] === 'X'
+    ) {
       alert('You have won!');
     }
   }
