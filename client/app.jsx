@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      grid: ['', '', '', '', '', '', '', '', ''],
+      grid: ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
     };
   }
 
@@ -20,6 +20,9 @@ class App extends Component {
         }
       }),
     });
+    this.checkForWinner();
+  }
+  checkForWinner() {
     // vertical check
     if (this.state.grid[0] === 'X' && this.state.grid[1] === 'X' && this.state.grid[2] === 'X' ||
       this.state.grid[4] === 'X' && this.state.grid[5] === 'X' && this.state.grid[6] === 'X' ||
@@ -28,9 +31,9 @@ class App extends Component {
       alert('You have won!');
     }
     // horizontal check
-    if (this.state.grid[0] === 'X' && this.state.grid[3] === 'X' && this.state.grid[7] === 'X' ||
-      this.state.grid[1] === 'X' && this.state.grid[4] === 'X' && this.state.grid[8] === 'X' ||
-      this.state.grid[2] === 'X' && this.state.grid[5] === 'X' && this.state.grid[9] === 'X'
+    if (this.state.grid[0] === 'X' && this.state.grid[3] === 'X' && this.state.grid[6] === 'X' ||
+      this.state.grid[1] === 'X' && this.state.grid[4] === 'X' && this.state.grid[7] === 'X' ||
+      this.state.grid[2] === 'X' && this.state.grid[5] === 'X' && this.state.grid[8] === 'X'
     ) {
       alert('You have won!');
     }
