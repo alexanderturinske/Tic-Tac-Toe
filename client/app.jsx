@@ -12,21 +12,25 @@ class App extends Component {
     this.handleTurn = this.handleTurn.bind(this);
   }
 
-  handleTurn(number) {
-    this.setState({
-      grid: this.state.grid.map((e, i) => {
-        if (i === number) {
-          if (this.state.counter % 2) {
-            return 'X';
+  handleTurn(number, value) {
+    if (value !== 'X' && value !== 'O') {
+      this.setState({
+        grid: this.state.grid.map((e, i) => {
+          if (i === number) {
+            if (this.state.counter % 2) {
+              return 'X';
+            } else {
+              return 'O';
+            }
           } else {
-            return 'O';
+            return e;
           }
-        } else {
-          return e;
-        }
-      }),
-      counter: ++this.state.counter,
-    });
+        }),
+        counter: ++this.state.counter,
+      });
+    } else {
+      alert('This position has been used!');
+    }
     this.checkForWinner('X');
     this.checkForWinner('O');
   }
@@ -62,6 +66,7 @@ class App extends Component {
   render() {
     return (
       <div>
+      <div className="title">Tic-Tac-Toe</div>
         <form onClick={this.resetGrid.bind(this)}>
           <input type="Button" value="Reset" />
         </form>
