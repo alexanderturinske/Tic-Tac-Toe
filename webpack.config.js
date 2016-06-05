@@ -5,6 +5,10 @@ module.exports = {
     publicPath: 'client/dist',
     filename: 'bundle.js',
   },
+  devServer: {
+    inline: true,
+    port: 1337,
+  },
   module: {
     loaders: [
       {

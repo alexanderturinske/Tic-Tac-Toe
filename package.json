@@ -9,7 +9,7 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server/server.js"
+    "start": "webpack-dev-server"
   },
   "babel": {
     "presets": [
@@ -40,5 +40,6 @@
     "webpack": "^1.13.1"
   },
   "devDependencies": {
+    "webpack-dev-server": "^1.14.1"
   }
 }
