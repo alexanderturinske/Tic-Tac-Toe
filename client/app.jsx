@@ -7,48 +7,65 @@ class App extends Component {
     super(props);
     this.state = {
       grid: ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+      counter: 1,
     };
+    this.handleTurn = this.handleTurn.bind(this);
   }
 
   handleTurn(number) {
     this.setState({
       grid: this.state.grid.map((e, i) => {
         if (i === number) {
-          return 'X';
+          if (this.state.counter % 2) {
+            return 'X';
+          } else {
+            return 'O';
+          }
         } else {
           return e;
         }
       }),
+      counter: ++this.state.counter,
     });
-    this.checkForWinner();
+    this.checkForWinner('X');
+    this.checkForWinner('O');
   }
-  checkForWinner() {
+  checkForWinner(test) {
     // vertical check
-    if (this.state.grid[0] === 'X' && this.state.grid[1] === 'X' && this.state.grid[2] === 'X' ||
-      this.state.grid[4] === 'X' && this.state.grid[5] === 'X' && this.state.grid[6] === 'X' ||
-      this.state.grid[7] === 'X' && this.state.grid[8] === 'X' && this.state.grid[9] === 'X'
+    if (this.state.grid[0] === test && this.state.grid[1] === test && this.state.grid[2] === test ||
+      this.state.grid[4] === test && this.state.grid[5] === test && this.state.grid[6] === test ||
+      this.state.grid[7] === test && this.state.grid[8] === test && this.state.grid[9] === test
     ) {
       alert('You have won!');
     }
     // horizontal check
-    if (this.state.grid[0] === 'X' && this.state.grid[3] === 'X' && this.state.grid[6] === 'X' ||
-      this.state.grid[1] === 'X' && this.state.grid[4] === 'X' && this.state.grid[7] === 'X' ||
-      this.state.grid[2] === 'X' && this.state.grid[5] === 'X' && this.state.grid[8] === 'X'
+    if (this.state.grid[0] === test && this.state.grid[3] === test && this.state.grid[6] === test ||
+      this.state.grid[1] === test && this.state.grid[4] === test && this.state.grid[7] === test ||
+      this.state.grid[2] === test && this.state.grid[5] === test && this.state.grid[8] === test
     ) {
       alert('You have won!');
     }
     // cross check
-    if (this.state.grid[0] === 'X' && this.state.grid[4] === 'X' && this.state.grid[9] === 'X' ||
-      this.state.grid[2] === 'X' && this.state.grid[4] === 'X' && this.state.grid[7] === 'X'
+    if (this.state.grid[0] === test && this.state.grid[4] === test && this.state.grid[9] === test ||
+      this.state.grid[2] === test && this.state.grid[4] === test && this.state.grid[7] === test
     ) {
       alert('You have won!');
     }
+  }
+  resetGrid() {
+    this.setState({
+      grid: ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+    });
+    console.log('yiss');
   }
 
   render() {
     return (
       <div>
-        <Board grid={this.state.grid} clickEvent={this.handleTurn.bind(this)} />
+        <form onClick={this.resetGrid.bind(this)}>
+          <input type="Button" value="Reset" />
+        </form>
+        <Board grid={this.state.grid} clickEvent={this.handleTurn} />
       </div>
     );
   }
