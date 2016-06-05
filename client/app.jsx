@@ -65,9 +65,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-      <div className="title">Tic-Tac-Toe</div>
-        <form onClick={this.resetGrid.bind(this)}>
+      <div className="container">
+        <div className="title">Tic-Tac-Toe</div>
+        <form className="button" onClick={this.resetGrid.bind(this)}>
           <input type="Button" value="Reset" />
         </form>
         <Board grid={this.state.grid} clickEvent={this.handleTurn} />
