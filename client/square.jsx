@@ -2,7 +2,8 @@ import React from 'react';
 
 const Square = ({ number, value, clickEvent }) => (
   <div
-    id="square"
+    className="square"
+    id={'square' + number}
     onClick={() => clickEvent(number, value)}
   >
     {value}

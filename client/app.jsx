@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      grid: ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+      grid: ['', '', '', '', '', '', '', '', ''],
       counter: 1,
     };
     this.handleTurn = this.handleTurn.bind(this);
@@ -58,7 +58,7 @@ class App extends Component {
   }
   resetGrid() {
     this.setState({
-      grid: ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+      grid: ['', '', '', '', '', '', '', '', ''],
     });
     console.log('yiss');
   }

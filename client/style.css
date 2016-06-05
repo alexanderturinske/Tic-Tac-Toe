@@ -23,11 +23,20 @@ html, body, #app {
   align-content: center;
 }
 
-#square {
+.square {
   flex-grow: 0;
   height: 30%;
   width: 30%;
   display: inline-block;
   text-align: center;
   font-size: 60px;
+  cursor: pointer;
+}
+
+#square0, #square1, #square2, #square3, #square4, #square5 {
+  border-right: solid thick black;
+}
+
+#square0, #square1, #square3, #square4, #square6, #square7 {
+  border-bottom: solid thick black;
 }
