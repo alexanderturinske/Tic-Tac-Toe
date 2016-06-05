@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Square = ({ number, clickEvent }) => (
+const Square = ({ number, value, clickEvent }) => (
   <div
     id="square"
     onClick={() => clickEvent(number)}
   >
-    {number}
+    {value}
   </div>
 );
 
@@ -13,6 +13,7 @@ const Square = ({ number, clickEvent }) => (
 Square.propTypes = {
   clickEvent: React.PropTypes.func,
   number: React.PropTypes.number,
+  value: React.PropTypes.string,
 };
 
 export default Square;

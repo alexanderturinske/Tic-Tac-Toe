@@ -7,6 +7,7 @@ const Board = ({ grid, clickEvent }) => (
       <Square
         key={i}
         number={i}
+        value={grid[i]}
         clickEvent={clickEvent}
       />
     )}
