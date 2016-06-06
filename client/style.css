@@ -29,7 +29,7 @@ html, body, #app {
   width: 30%;
   display: inline-block;
   text-align: center;
-  font-size: 60px;
+  font-size: 100px;
   cursor: pointer;
 }
 

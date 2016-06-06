@@ -31,16 +31,15 @@ class App extends Component {
     } else {
       alert('This position has been used!');
     }
-    this.checkForWinner('X');
-    this.checkForWinner('O');
   }
   checkForWinner(test) {
     // vertical check
     if (this.state.grid[0] === test && this.state.grid[1] === test && this.state.grid[2] === test ||
-      this.state.grid[4] === test && this.state.grid[5] === test && this.state.grid[6] === test ||
-      this.state.grid[7] === test && this.state.grid[8] === test && this.state.grid[9] === test
+      this.state.grid[3] === test && this.state.grid[4] === test && this.state.grid[5] === test ||
+      this.state.grid[6] === test && this.state.grid[7] === test && this.state.grid[8] === test
     ) {
       alert('Player ' + test + ' has won!');
+      return 'Player ' + test + ' has won!';
     }
     // horizontal check
     if (this.state.grid[0] === test && this.state.grid[3] === test && this.state.grid[6] === test ||
@@ -48,12 +47,14 @@ class App extends Component {
       this.state.grid[2] === test && this.state.grid[5] === test && this.state.grid[8] === test
     ) {
       alert('Player ' + test + ' has won!');
+      return 'Player ' + test + ' has won!';
     }
     // cross check
     if (this.state.grid[0] === test && this.state.grid[4] === test && this.state.grid[8] === test ||
       this.state.grid[2] === test && this.state.grid[4] === test && this.state.grid[6] === test
     ) {
       alert('Player ' + test + ' has won!');
+      return 'Player ' + test + ' has won!';
     }
   }
   resetGrid() {
@@ -63,6 +64,8 @@ class App extends Component {
   }
 
   render() {
+    this.checkForWinner('X');
+    this.checkForWinner('O');
     return (
       <div className="container">
         <div className="title">Tic-Tac-Toe</div>
