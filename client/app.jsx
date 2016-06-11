@@ -12,6 +12,7 @@ class App extends Component {
     this.handleTurn = this.handleTurn.bind(this);
   }
 
+  // switch which user's turn it is
   handleTurn(number, value) {
     if (value !== 'X' && value !== 'O') {
       this.setState({
@@ -32,6 +33,7 @@ class App extends Component {
       alert('This position has been used!');
     }
   }
+
   checkForWinner(test) {
     // vertical check
     if (this.state.grid[0] === test && this.state.grid[1] === test && this.state.grid[2] === test ||
