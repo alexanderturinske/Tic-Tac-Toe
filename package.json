@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexanderturinske/TicTacToe"
+    "url": "https://github.com/alexanderturinske/Tic-Tac-Toe"
   },
   "main": "server.js",
   "scripts": {
