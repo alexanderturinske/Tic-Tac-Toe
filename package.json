@@ -9,7 +9,8 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack -d && node server/server.js & webpack --watch",
+    "dev-start": "webpack-dev-server"
   },
   "babel": {
     "presets": [
