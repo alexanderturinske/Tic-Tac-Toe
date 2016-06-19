@@ -9,7 +9,7 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "webpack -d && node server/server.js & webpack --watch",
+    "start": "echo 'react or angular?'; read framework; if [[ $framework = 'react' ]]; then webpack -d && node server/server.js & webpack --watch; else echo 'angular is not set up yet'; fi",
     "dev-start": "webpack-dev-server"
   },
   "babel": {
