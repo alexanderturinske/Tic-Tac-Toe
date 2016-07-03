@@ -12,9 +12,15 @@
 
   function BoardController() {
     var vm = this;
-    vm.squares = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-      .map(function (ele) {
-        return 'yis';
-      });
+    vm.squares = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+    vm.next = true;
+    vm.move = function move(index) {
+      if (vm.next) {
+        vm.squares[index] = 'X';
+      } else {
+        vm.squares[index] = 'O';
+      }
+      vm.next = !vm.next;
+    };
   }
 })();
