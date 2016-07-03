@@ -18,9 +18,11 @@
       if (!vm.squares[index]) {
         if (vm.next === 'X') {
           vm.squares[index] = 'X';
+          vm.checkForWinner(vm.next);
           vm.next = 'O';
         } else {
           vm.squares[index] = 'O';
+          vm.checkForWinner(vm.next);
           vm.next = 'X';
         }
       } else {
