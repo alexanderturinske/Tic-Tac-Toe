@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="tictactoe">
+<html ng-app="TicTacToe">
   <head>
     <title>TicTacToe - Angular</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
@@ -11,6 +11,9 @@
         <input type="Button" value="Reset" />
       </form>
       <div id='board' ng-controller="BoardController as board">
+        <div class='square' ng-repeat="s in board.squares track by $index">
+          {{s + $index}}
+        </div>
       </div>
     </div>
     <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
