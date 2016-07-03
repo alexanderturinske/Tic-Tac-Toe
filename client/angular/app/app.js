@@ -3,17 +3,15 @@
 *
 * Description
 */
-var app = angular.module('app', [
-  'ui-router',
-])
+(function () {
+  'use strict';
 
-.config(function ($stateProvider, $urlRouterProvider) {
-  // setup misc. routing
-  $urlRouterProvider.otherwise();
+  angular
+    .module('ajtTicTacToe', [])
+    .controller('BoardContainer', BoardContainer);
 
-  $stateProvider
-    // basic view
-    .state('tictactoe', {
-      url: '/angular',
-    });
-});
+  function BoardContainer () {
+    var vm = this;
+
+  };
+})();
