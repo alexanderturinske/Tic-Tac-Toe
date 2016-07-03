@@ -12,15 +12,20 @@
 
   function BoardController() {
     var vm = this;
-    vm.squares = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
-    vm.next = true;
-    vm.move = function move(index) {
-      if (vm.next) {
-        vm.squares[index] = 'X';
+    vm.squares = ['', '', '', '', '', '', '', '', ''];
+    vm.next = 'X';
+    vm.handleTurn = function handleTurn(index) {
+      if (!vm.squares[index]) {
+        if (vm.next === 'X') {
+          vm.squares[index] = 'X';
+          vm.next = 'O';
+        } else {
+          vm.squares[index] = 'O';
+          vm.next = 'X';
+        }
       } else {
-        vm.squares[index] = 'O';
+        alert('This position has been used!');
       }
-      vm.next = !vm.next;
     };
   }
 })();
