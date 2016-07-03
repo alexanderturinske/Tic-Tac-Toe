@@ -10,9 +10,11 @@
       <form class="button">
         <input type="Button" value="Reset" />
       </form>
-      <div id='board' ng-controller="BoardController as board">
-        <div class='square' ng-repeat="s in board.squares track by $index" ng-attr-id="{{'square' + $index}}">
-          {{s}}
+      <div ng-controller="BoardController as board">
+        <div id='board'>
+          <div class='square' ng-repeat="s in board.squares track by $index" ng-attr-id="{{'square' + $index}}" ng-click="board.move($index)">
+            {{s}}
+          </div>
         </div>
       </div>
     </div>
