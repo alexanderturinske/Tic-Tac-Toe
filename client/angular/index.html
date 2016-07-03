@@ -5,14 +5,13 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
   </head>
   <body>
-    <div class="container">
-      <div class="title">Tic-Tac-Toe</div>
-      <form class="button">
-        <input type="Button" value="Reset" />
-      </form>
-      <div ng-controller="BoardController as board">
-        <span class="current">Current Player</span>
-        <input class="current" ng-model="board.next">
+    <div ng-controller="BoardController as board">
+      <div class="container">
+        <div class="title">Tic-Tac-Toe</div>
+        <form class="button">
+          <input type="Button" value="Reset" ng-click="board.resetGrid()"/>
+        </form>
+        <span class="current">Current Player: {{board.next}}</span>
         <div id='board'>
           <div class='square' ng-repeat="s in board.squares track by $index" ng-attr-id="{{'square' + $index}}" ng-click="board.handleTurn($index)">
             {{s}}
