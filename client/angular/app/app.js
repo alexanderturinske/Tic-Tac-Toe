@@ -7,11 +7,14 @@
   'use strict';
 
   angular
-    .module('ajtTicTacToe', [])
-    .controller('BoardContainer', BoardContainer);
+    .module('TicTacToe', [])
+    .controller('BoardController', BoardController);
 
-  function BoardContainer () {
+  function BoardController() {
     var vm = this;
-
-  };
+    vm.squares = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+      .map(function (ele) {
+        return 'yis';
+      });
+  }
 })();
