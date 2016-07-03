@@ -11,8 +11,10 @@
         <input type="Button" value="Reset" />
       </form>
       <div ng-controller="BoardController as board">
+        <span class="current">Current Player</span>
+        <input class="current" ng-model="board.next">
         <div id='board'>
-          <div class='square' ng-repeat="s in board.squares track by $index" ng-attr-id="{{'square' + $index}}" ng-click="board.move($index)">
+          <div class='square' ng-repeat="s in board.squares track by $index" ng-attr-id="{{'square' + $index}}" ng-click="board.handleTurn($index)">
             {{s}}
           </div>
         </div>
