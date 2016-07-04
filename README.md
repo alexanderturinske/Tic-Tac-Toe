@@ -30,3 +30,6 @@ Visit `localhost:1337/client` in the browser.
 
 ### [React](https://facebook.github.io/react/index.html)
 
+### [Angular](https://angularjs.org/)
+
+### [Vanilla Javascript](https://www.javascript.com/)
