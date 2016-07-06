@@ -9,7 +9,7 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "echo 'react or angular or vanilla?'; read framework; if [[ $framework = 'react' ]]; then webpack -d && node server/server.js & webpack --watch; elif [[ $framework = 'angular' ]]; then open client/angular/index.html; elif [[ $framework = 'vanilla' ]]; then echo 'vanilla is not setup yet'; else echo 'That option is not valid!'; fi",
+    "start": "echo 'react, angular, jquery, or vanilla?'; read framework; if [[ $framework = 'react' ]]; then webpack -d && node server/server.js & webpack --watch; elif [[ $framework = 'angular' ]]; then open client/angular/index.html; elif [[ $framework = 'jquery' ]]; then open client/jquery/index.html; elif [[ $framework = 'vanilla' ]]; then open client/vanilla/index.html; else echo 'That option is not valid!'; fi",
     "dev-start": "webpack-dev-server"
   },
   "babel": {
