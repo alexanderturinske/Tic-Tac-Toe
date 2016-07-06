@@ -7,6 +7,9 @@ var resetGrid = function () {
 var divs = [];
 
 $(document).ready(function () {
+  $('.current').text(current);
+
+  // place divs with the right class and id
   $('.button').on('click', resetGrid);
   for (var i = 0; i < 9; i++) {
     var div = $('<div/>', {
@@ -17,6 +20,8 @@ $(document).ready(function () {
     divs.push(div);
     div.appendTo('#board');
   }
+
+  // add on('click') events to divs
   divs.forEach(function (e) {
     e.on('click', function () {
       var id = $(this).attr('id');
@@ -26,6 +31,9 @@ $(document).ready(function () {
       } else {
         current = 'X';
       }
+      $('.current').text(current);
     });
   });
+
+
 });
