@@ -27,6 +27,7 @@ $(document).ready(function () {
     e.on('click', function () {
       var id = $(this).attr('id');
       $('#' + id).text(current);
+      checkForWinner(divs, current);
       if (current === 'X') {
         current = 'O';
       } else {
@@ -36,5 +37,30 @@ $(document).ready(function () {
     });
   });
 
-
 });
+
+var checkForWinner = function checkForWinner(array, test) {
+  // vertical check
+  if (array[0].text() === test && array[1].text() === test && array[2].text() === test ||
+    array[3].text() === test && array[4].text() === test && array[5].text() === test ||
+    array[6].text() === test && array[7].text() === test && array[8].text() === test
+  ) {
+    alert('Player ' + test + ' has won!');
+    return 'Player ' + test + ' has won!';
+  }
+  // horizontal check
+  if (array[0].text() === test && array[3].text() === test && array[6].text() === test ||
+    array[1].text() === test && array[4].text() === test && array[7].text() === test ||
+    array[2].text() === test && array[5].text() === test && array[8].text() === test
+  ) {
+    alert('Player ' + test + ' has won!');
+    return 'Player ' + test + ' has won!';
+  }
+  // cross check
+  if (array[0].text() === test && array[4].text() === test && array[8].text() === test ||
+    array[2].text() === test && array[4].text() === test && array[6].text() === test
+  ) {
+    alert('Player ' + test + ' has won!');
+    return 'Player ' + test + ' has won!';
+  }
+};
