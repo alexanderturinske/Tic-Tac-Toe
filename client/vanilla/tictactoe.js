@@ -1,10 +1,11 @@
 // Tic-tac-toe application in vanilla javascript
 var current = 'X';
-var resetGrid = function () {
-  alert('clicked');
-};
-
 var divs = [];
+var resetGrid = function () {
+  divs.forEach(function (el) {
+    el.text('');
+  });
+};
 
 $(document).ready(function () {
   $('.current').text(current);
