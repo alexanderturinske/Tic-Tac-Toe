@@ -3,7 +3,7 @@
 
   angular
    .module('logic', [])
-    .factory('WinnerService', WinnerService);
+   .factory('WinnerService', WinnerService);
 
   function WinnerService() {
     var WinnerService = {};
