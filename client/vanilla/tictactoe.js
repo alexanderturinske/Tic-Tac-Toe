@@ -1,5 +1,5 @@
 // Tic-tac-toe application in vanilla javascript
-
+var current = 'X';
 var resetGrid = function () {
   alert('clicked');
 };
@@ -17,4 +17,15 @@ $(document).ready(function () {
     divs.push(div);
     div.appendTo('#board');
   }
+  divs.forEach(function (e) {
+    e.on('click', function () {
+      var id = $(this).attr('id');
+      $('#' + id).text(current);
+      if (current === 'X') {
+        current = 'O';
+      } else {
+        current = 'X';
+      }
+    });
+  });
 });
