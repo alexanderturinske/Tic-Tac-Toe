@@ -4,9 +4,17 @@ var resetGrid = function () {
   alert('clicked');
 };
 
+var divs = [];
+
 $(document).ready(function () {
   $('.button').on('click', resetGrid);
   for (var i = 0; i < 9; i++) {
-    $('#board').append('<div class="square" id="square">yis</div>');
+    var div = $('<div/>', {
+      id: 'square' + i,
+      class: 'square',
+      text: '',
+    });
+    divs.push(div);
+    div.appendTo('#board');
   }
 });
