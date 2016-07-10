@@ -1,15 +1,26 @@
 var current = 'X';
 var divs = [];
-var board = document.getElementsByClassName('board');
+var board = document.querySelector('#board');
+
+// show current
+document.querySelector('.current').innerHTML = current;
+
+// define function to handle turns
+function handleTurn() {
+  this.innerHTML = current;
+  if (current === 'X') {
+    current = 'O';
+  } else {
+    current = 'X';
+  }
+}
 
 // create squares
 for (var i = 0; i < 9; i++) {
   var div = document.createElement('div');
-  div.className = 'squares';
+  div.className = 'square';
   div.id = 'square' + i;
   divs.push(div);
-  document.board.appendChild(div);
-  // document.getElementsByClassName('ui-modal');
+  div.addEventListener('click', handleTurn);
+  board.appendChild(div);
 }
-
-// add squares
